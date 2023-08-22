@@ -1,0 +1,24 @@
+@import 'variables';
+@import 'buttons';
+@import 'cards';
+@import 'sidebar';
+@import 'buttons';
+@import 'navbar';
+@import 'dashboard';
+
+:root{
+    
+    
+    
+}
+
+body{
+    background-color: #07112D;
+    font-family: $fontNunito;
+
+    a{
+        text-decoration: none;
+
+    }
+}
+
