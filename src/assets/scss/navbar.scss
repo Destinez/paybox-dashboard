@@ -1,4 +1,13 @@
 nav {
+  .navbar-brand {
+    color: #242424;
+    font-family: Nunito;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
   border-radius: 1.875rem;
   background-color: #fff;
 
@@ -10,8 +19,8 @@ nav {
   .dropdown button,
   .dropdown button:focus,
   .dropdown button:hover,
-  .dropdown button:active {
-    background: transparent;
+  .dropdown button:active .dropdown button:first-child:active {
+    background: transparent !important;
     border-style: none;
   }
 
@@ -62,6 +71,6 @@ nav {
   }
 
   .navbar-brand {
-    color: #fff;
+    color: #fff!important;
   }
 }

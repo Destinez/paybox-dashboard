@@ -285,9 +285,9 @@ export function BlueCard(props) {
           </Col>
         </Row>
 
-        <image className="svg1" src={svg1} alt="vectors" />
-        <image className="svg2" src={svg2} alt="vectors" />
-        <image className="svg3" src={svg3} alt="vectors" />
+        <div className="svg1" ></div>
+        <div className="svg2" ></div>
+        <div className="svg3" ></div>
 
         <Row className="mt-3">
           <Col xs={6}>
