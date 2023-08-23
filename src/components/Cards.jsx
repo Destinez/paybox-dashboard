@@ -53,7 +53,7 @@ export function Cards(props) {
             </span>
           </Col>
           <Col xs={6}>
-            <FormGroup>
+            <FormGroup className="m-0">
               <Input
                 className="border-0 card-select"
                 type="select"
@@ -142,7 +142,7 @@ export function Cards(props) {
 
 export function ViewDetailsCards(props) {
   return (
-    <Card className="m-2 mx-0 p-2 bg-light border-0">
+    <Card className="m-2 mx-0 p-2 bg-light border-0 view-details">
       <div className="card-inner bg-secondary p-3">
         <Row>
           <Col xs={12} className="pe-0">
@@ -158,7 +158,7 @@ export function ViewDetailsCards(props) {
           </Col>
         </Row>
       </div>
-      <p className="figures text-primary p-2">
+      <p className="figures text-primary px-3 pt-2">
         <Link className="text-primary figures-label" to="#">
           View details <KeyboardDoubleArrowRightOutlined />{" "}
         </Link>
@@ -260,9 +260,16 @@ export function ChartCards(props) {
   );
 }
 
+
 export function BlueCard(props) {
+  const [hideFigure, setHideFigure] = useState(false);
+
+  const toggleFigureVisibility = () => {
+    setHideFigure(!hideFigure);
+  };
+
   return (
-    <Card className="m-2 mx-0 p-4 bg-primary border-0 ">
+    <Card className="m-2 mx-0 p-4 bg-primary border-0">
       <div className="blue-card">
         <Row>
           <Col xs={12}>
@@ -272,9 +279,9 @@ export function BlueCard(props) {
           </Col>
           <Col xs={12} className="d-flex align-items-center">
             <strong className="figures">
-              ₦{props.figure ? addCommasToInteger(props.figure) : "300"}
+              {hideFigure ? '********' : `₦${props.figure ? addCommasToInteger(props.figure) : "300"}`}
             </strong>
-            <Eye className="text-white ms-2" />
+            <Eye className="text-white ms-2" onClick={toggleFigureVisibility} />
           </Col>
         </Row>
 
@@ -294,3 +301,4 @@ export function BlueCard(props) {
     </Card>
   );
 }
+

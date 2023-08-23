@@ -19,10 +19,10 @@ export default function Dashboard() {
         </Col>
 
         {/* Main Content */}
-        <Col sm={12} md={10} lg={10} className="content p-4">
+        <Col sm={12} md={10} lg={10} className="content py-4">
           <Container fluid className="main-content">
             <NavbarComponent />
-            <Row className="p-1">
+            <Row className="p-1 main-content-grid">
               <Col xlg={3} md={6} lg={3} sm={12}>
                 <BlueCard
                   title="Wallet Balance"
