@@ -1,6 +1,6 @@
 import React from "react";
-import Sidebar from "../components/Sidebar"; // Your Sidebar component
-import { Container, Row, Col } from "reactstrap"; // Replace with your UI library components
+import Sidebar from "../components/Sidebar"; 
+import { Container, Row, Col } from "reactstrap"; 
 
 const Layout = ({ children }) => {
   return (
@@ -13,7 +13,7 @@ const Layout = ({ children }) => {
 
         {/* Main Content */}
         <Col xs="10">
-          {children} {/* This is where the content of each page will be rendered */}
+          {children} 
         </Col>
       </Row>
     </Container>

@@ -2,12 +2,9 @@ nav {
   border-radius: 1.875rem;
   background-color: #fff;
 
-  
   .avatar {
     border-radius: 50%;
     width: 3rem;
-
-    
   }
 
   .dropdown button,
@@ -41,6 +38,9 @@ nav {
     .notification-badge {
       position: absolute;
       font-size: 0.8rem;
+
+      left: 0.8rem;
+      top: -0.1rem;
     }
   }
 }

@@ -7,7 +7,6 @@ import {
   NavLink,
   Row,
   Col,
-  Badge,
   Dropdown,
   DropdownToggle,
   DropdownMenu,
@@ -20,7 +19,7 @@ import {
   FiberManualRecord,
 } from "@mui/icons-material";
 import avatar from "../assets/images/avatar.jpg"
-import { NotificationBing } from "iconsax-react";
+import { NotificationBing, Notification } from "iconsax-react";
 
 const NavbarComponent = () => {
   const notificationCount = 1; // You can set your notification count here
@@ -34,13 +33,13 @@ const NavbarComponent = () => {
       <NavbarBrand href="/" className="text-sm-light">Analytics Dashboard</NavbarBrand>
       <Nav className="ml-auto d-lg-flex align-items-center d-md-flex d-none" navbar>
         <NavItem className="notifications">
-          <div className="d-flex">
+          <div className="d-flex position-relative">
             <NotificationBing className="text-primary" variant="Bulk" />
-            <div className="position-relative">
+            {/* <div className="position-relative"> */}
               {notificationCount > 0 && (
                 <FiberManualRecord className="notification-badge text-danger" />
               )}
-            </div>
+            {/* </div> */}
           </div>
         </NavItem>
         <NavItem>
@@ -69,8 +68,12 @@ const NavbarComponent = () => {
             </DropdownMenu>
           </Dropdown>
         </NavItem>
+        
       </Nav>
-      <Button className="btn-light w-25 d-md-none d-block py-2 rounded-3">Menu</Button>
+      <NavItem className="d-md-none d-block">
+          <Button className="btn-light w-100 py-2 px-4 rounded-3">Menu</Button>
+          
+        </NavItem>
     </Navbar>
   );
 };

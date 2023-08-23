@@ -11,13 +11,13 @@ const Chart = ({ label1, figure1, color1, label2, figure2, color2, label3, figur
       {
         data: [figure1, figure2, figure3],
         backgroundColor: [color1, color2, color3],
-        hoverBackgroundColor: [color1, color2, color3],
+        hoverBackgroundColor: [ `${color1}63`, `${color2}63`, `${color3}63`],
       },
     ],
   };
 
   const options = {
-    maintainAspectRatio: false, // Ensure the chart maintains its aspect ratio
+    maintainAspectRatio: false, 
   };
 
   return (

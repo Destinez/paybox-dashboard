@@ -2,14 +2,12 @@
   border-radius: 0.625rem;
   min-height: 9rem;
 
-
-
   .blue-card {
     // background: url("../svgs/svg3.svg");
     // background-repeat: no-repeat;
     // background-position: bottom right;
 
-    .btn{
+    .btn {
       // padding: 1.2rem 0rem;
       border-radius: 0.4375rem;
     }
@@ -45,6 +43,11 @@
       background-color: #eaf4ff;
     }
 
+    .label-indicators {
+      font-size: 0.6rem;
+      margin: 0;
+    }
+
     .figures {
       font-family: $fontSora;
       font-variant-numeric: lining-nums proportional-nums;
@@ -78,15 +81,14 @@
   color: #000;
   .label-indicator-container {
     width: min-content;
-    
   }
   .label-indicators {
-    font-size: 0.8rem;
+    font-size: 0.6rem;
     margin: 0;
   }
 
   .divider {
-    border: 1px dashed #C4C4C4;
+    border: 1px dashed #c4c4c4;
   }
   .indicator-label {
     color: #37474f;
@@ -100,17 +102,15 @@
   }
 }
 
-.view-details{
-
-  .figures-label{
+.view-details {
+  .figures-label {
     color: #032282;
-font-variant-numeric: lining-nums proportional-nums;
-font-family: Nunito;
-font-size: 0.75rem;
-font-style: normal;
-font-weight: 400;
-line-height: 0.9375rem; /* 125% */
-letter-spacing: 0.01rem;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Nunito;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 0.9375rem; /* 125% */
+    letter-spacing: 0.01rem;
   }
 }
-

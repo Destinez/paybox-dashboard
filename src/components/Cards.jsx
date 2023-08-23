@@ -81,7 +81,7 @@ export function Cards(props) {
               {props?.indicator && (
                 <span className="label-indicator-container">
                   <FiberManualRecord
-                    className="label-indicators me-2"
+                    className="label-indicators me-1"
                     style={{ color: `${props.indicator1}` }}
                   />
                 </span>
@@ -99,7 +99,7 @@ export function Cards(props) {
             {props?.indicator && (
                 <span className="label-indicator-container">
                   <FiberManualRecord
-                    className="label-indicators me-2"
+                    className="label-indicators me-1"
                     style={{ color: `${props.indicator2}` }}
                   />
                 </span>
@@ -291,10 +291,10 @@ export function BlueCard(props) {
 
         <Row className="mt-3">
           <Col xs={6}>
-            <Button className="btn-light w-100 w-md-100">{props.button1}</Button>
+            <Button className="btn-light w-100 py-3 py-md-2">{props.button1}</Button>
           </Col>
           <Col xs={6}>
-            <Button className="btn-light w-100">{props.button2}</Button>
+            <Button className="btn-light w-100 py-3 py-md-2">{props.button2}</Button>
           </Col>
         </Row>
       </div>
