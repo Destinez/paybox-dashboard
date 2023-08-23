@@ -1,9 +1,18 @@
 .sidebar {
   background-color: #07112d;
-
+  position: fixed;
   overflow-y: auto;
   transition: 0.3s;
   z-index: 1000; /* Adjust the z-index as needed */
+
+  .active {
+    background: #192749;
+    border-radius: 12px;
+
+    svg{
+      color: #5879FD!important;
+    }
+  }
 
   .brand-title {
     color: #fff;
@@ -24,6 +33,7 @@
   .divider {
     border: 1px dashed #fff;
     opacity: 0.2;
+    margin: 1rem 0;
   }
   svg {
     margin-right: 0.5rem;

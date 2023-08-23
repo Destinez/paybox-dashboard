@@ -12,6 +12,7 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
+  Button
 } from "reactstrap";
 import {
   NotificationImportant,
@@ -29,9 +30,9 @@ const NavbarComponent = () => {
   const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
 
   return (
-    <Navbar color="light" light expand="md">
-      <NavbarBrand href="/">Analytics Dashboard</NavbarBrand>
-      <Nav className="ml-auto d-flex align-items-center" navbar>
+    <Navbar expand="md">
+      <NavbarBrand href="/" className="text-sm-light">Analytics Dashboard</NavbarBrand>
+      <Nav className="ml-auto d-lg-flex align-items-center d-md-flex d-none" navbar>
         <NavItem className="notifications">
           <div className="d-flex">
             <NotificationBing className="text-primary" variant="Bulk" />
@@ -69,6 +70,7 @@ const NavbarComponent = () => {
           </Dropdown>
         </NavItem>
       </Nav>
+      <Button className="btn-light w-25 d-md-none d-block py-2 rounded-3">Menu</Button>
     </Navbar>
   );
 };

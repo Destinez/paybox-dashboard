@@ -7,6 +7,10 @@
     // background-repeat: no-repeat;
     // background-position: bottom right;
 
+    .btn{
+      // padding: 1.2rem 0rem;
+      border-radius: 0.4375rem;
+    }
     .svg1 {
       position: absolute;
       bottom: 0;
@@ -61,6 +65,7 @@
 }
 
 .charts-card {
+  color: #000;
   .label-indicator-container {
     width: min-content;
     

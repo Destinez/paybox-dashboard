@@ -1,12 +1,14 @@
 nav {
   border-radius: 1.875rem;
+  background-color: #fff;
+
   
   .avatar {
     border-radius: 50%;
     width: 3rem;
-  }
 
-  
+    
+  }
 
   .dropdown button,
   .dropdown button:focus,
@@ -40,5 +42,26 @@ nav {
       position: absolute;
       font-size: 0.8rem;
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 124px;
+    border-radius: 0;
+    background-color: #032282;
+
+    .container-fluid {
+      align-items: flex-end;
+      height: 100%;
+    }
+  }
+
+  .navbar-brand {
+    color: #fff;
   }
 }

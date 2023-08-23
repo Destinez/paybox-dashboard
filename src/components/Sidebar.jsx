@@ -79,7 +79,7 @@ const Sidebar = (props) => {
                 Home
               </NavLink>
             </NavItem>
-            <NavItem>
+            <NavItem className="active">
               <NavLink to="#" onClick={closeCollapse}>
                 <Category2 />
                 Analytics Dashboard

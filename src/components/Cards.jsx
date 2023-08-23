@@ -20,6 +20,17 @@ import svg3 from "../assets/svgs/svg3.svg";
 import { Eye } from "iconsax-react";
 import Chart from "./Chart";
 
+function addCommasToInteger(number) {
+  // Convert the number to a string
+  const numberString = number.toString();
+
+  // Use regular expressions to add commas
+  // This regex adds a comma every three digits from the right
+  const formattedNumber = numberString.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+
+  return formattedNumber;
+}
+
 export function Cards(props) {
   const [selectedOption, setSelectedOption] = useState("");
 
@@ -27,6 +38,8 @@ export function Cards(props) {
   const handleSelectChange = (event) => {
     setSelectedOption(event.target.value);
   };
+
+ 
 
   const numRows = props.numRows || 2; // Default to 2 rows if numRows prop is not provided
 
@@ -60,26 +73,38 @@ export function Cards(props) {
         {numRows >= 2 && (
           <Row className="daily-figures">
             <Col xs={6}>
-              <span className="label-indicator-container">
-                <FiberManualRecord
-                  className="label-indicators me-2"
-                  style={{ color: `${props.indicator1}` }}
-                />
-              </span>
+              {props?.indicator && (
+                <span className="label-indicator-container">
+                  <FiberManualRecord
+                    className="label-indicators me-2"
+                    style={{ color: `${props.indicator1}` }}
+                  />
+                </span>
+              )}
               <span className="figures-label text-muted">
                 {props.figureLabel1 || "Figure Label 1"}
               </span>
               <p className="figures text-primary">
-                ₦{props.figure1 ? props.figure1 : "500"}
+              {props?.currency1 ? "₦" : null}
+                {props.figure1 ? addCommasToInteger(props.figure1) : "500"}
               </p>
             </Col>
 
             <Col xs={6}>
+            {props?.indicator && (
+                <span className="label-indicator-container">
+                  <FiberManualRecord
+                    className="label-indicators me-2"
+                    style={{ color: `${props.indicator2}` }}
+                  />
+                </span>
+              )}
               <span className="figures-label text-muted">
                 {props.figureLabel2 || "Figure Label 2"}
               </span>
               <p className="figures text-primary">
-                ₦{props.figure2 ? props.figure2 : "200"}
+              {props?.currency2 ? "₦" : null}
+                {props.figure2 ? addCommasToInteger(props.figure2) : "200"}
               </p>
             </Col>
           </Row>
@@ -89,10 +114,10 @@ export function Cards(props) {
           <Row className="daily-figures">
             <Col xs={6}>
               <span className="figures-label text-muted">
-                {props.figureLabel4 || "Figure Label 4"}
+                {props.figureLabel3 || "Figure Label 4"}
               </span>
               <p className="figures text-primary">
-                ₦{props.figure4 ? props.figure4 : "300"}
+                ₦{props.figure3 ? addCommasToInteger(props.figure3) : "300"}
               </p>
             </Col>
             <Col xs={6}>
@@ -100,7 +125,7 @@ export function Cards(props) {
                 {props.figureLabel4 || "Figure Label 4"}
               </span>
               <p className="figures text-primary">
-                ₦{props.figure4 ? props.figure4 : "300"}
+                ₦{props.figure4 ? addCommasToInteger(props.figure4) : "300"}
               </p>
             </Col>
           </Row>
@@ -123,12 +148,12 @@ export function ViewDetailsCards(props) {
           <Col xs={12}>
             <strong className="figures text-primary">
               {props?.currency ? "₦" : null}
-              {props.figure ? props.figure : "300"}
+              {props.figure ? addCommasToInteger(props.figure) : "300"}
             </strong>
           </Col>
         </Row>
       </div>
-      <p className="figures text-primary">
+      <p className="figures text-primary p-2">
         <Link className="text-primary figures-label" to="#">
           View details <KeyboardDoubleArrowRightOutlined />{" "}
         </Link>
@@ -142,7 +167,7 @@ export function ChartCards(props) {
       <Row>
         <Col md={6}>
           <div>
-            <span className="text-muted figures-label">
+            <span className="text-dark figures-label">
               {props.title ? props.title : "Total Savings Balance"}
             </span>
           </div>
@@ -161,9 +186,9 @@ export function ChartCards(props) {
                     {props.figureLabel1}
                   </div>
                 </div>
-                <strong className="figures text-primary">
+                <strong className="figures text-dark">
                   {props?.currency ? "₦" : null}
-                  {props.figure1 ? props.figure1 : "3000000"}
+                  {props.figure1 ? addCommasToInteger(props.figure1) : "3000000"}
                 </strong>
               </div>
 
@@ -183,9 +208,9 @@ export function ChartCards(props) {
                       {props.figureLabel2}
                     </div>
                   </div>
-                  <strong className="figures text-primary">
+                  <strong className="figures text-dark">
                     {props?.currency ? "₦" : null}
-                    {props.figure2 ? props.figure2 : "3000000"}
+                    {props.figure2 ? addCommasToInteger(props.figure2) : "3000000"}
                   </strong>
                 </div>
 
@@ -202,9 +227,9 @@ export function ChartCards(props) {
                       {props.figureLabel3}
                     </div>
                   </div>
-                  <strong className="figures text-primary">
+                  <strong className="figures text-dark">
                     {props?.currency ? "₦" : null}
-                    {props.figure3 ? props.figure3 : "3000000"}
+                    {props.figure3 ? addCommasToInteger(props.figure3) : "3000000"}
                   </strong>
                 </div>
               </div>
@@ -242,7 +267,7 @@ export function BlueCard(props) {
           </Col>
           <Col xs={12} className="d-flex align-items-center">
             <strong className="figures">
-              ₦{props.figure ? props.figure : "300"}
+              ₦{props.figure ? addCommasToInteger(props.figure) : "300"}
             </strong>
             <Eye className="text-white ms-2" />
           </Col>
@@ -254,10 +279,10 @@ export function BlueCard(props) {
 
         <Row className="mt-3">
           <Col xs={6}>
-            <Button className="btn-light">{props.button1}</Button>
+            <Button className="btn-light w-75 w-md-100">{props.button1}</Button>
           </Col>
           <Col xs={6}>
-            <Button className="btn-light">{props.button2}</Button>
+            <Button className="btn-light w-75">{props.button2}</Button>
           </Col>
         </Row>
       </div>
