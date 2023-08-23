@@ -3,6 +3,7 @@
   position: fixed;
   overflow-y: auto;
   transition: 0.3s;
+  width: inherit;
   z-index: 1000; /* Adjust the z-index as needed */
 
   .active {
@@ -33,7 +34,7 @@
   .divider {
     border: 1px dashed #fff;
     opacity: 0.2;
-    margin: 1rem 0;
+    margin: 0.3rem 0;
   }
   svg {
     margin-right: 0.5rem;

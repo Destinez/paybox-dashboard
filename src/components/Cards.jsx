@@ -47,9 +47,9 @@ export function Cards(props) {
     <Card className="m-2 mx-0 p-2 bg-light border-0">
       <div className="card-inner bg-secondary p-3">
         <Row>
-          <Col xs={6}>
-            <span className="text-muted figures-label">
-              {props.title ? props.title : "Total ransfer"}
+          <Col xs={6} className="pe-0" >
+            <span className="text-muted label">
+              {props.title ? props.title : "Total Transfer"}
             </span>
           </Col>
           <Col xs={6}>
@@ -62,8 +62,13 @@ export function Cards(props) {
                 value={selectedOption}
                 onChange={handleSelectChange}
               >
+                {numRows <= 2 && (
                 <option value="">Today</option>
-                <option value="option1">Yesterday</option>
+                )}
+                {numRows >= 3 && (
+                <option value="">More</option>
+                )}
+                
               </Input>
             </FormGroup>
           </Col>
@@ -140,8 +145,8 @@ export function ViewDetailsCards(props) {
     <Card className="m-2 mx-0 p-2 bg-light border-0">
       <div className="card-inner bg-secondary p-3">
         <Row>
-          <Col xs={12}>
-            <span className="text-muted figures-label">
+          <Col xs={12} className="pe-0">
+            <span className="text-muted label">
               {props.title ? props.title : "Total Savings Balance"}
             </span>
           </Col>
@@ -279,10 +284,10 @@ export function BlueCard(props) {
 
         <Row className="mt-3">
           <Col xs={6}>
-            <Button className="btn-light w-75 w-md-100">{props.button1}</Button>
+            <Button className="btn-light w-100 w-md-100">{props.button1}</Button>
           </Col>
           <Col xs={6}>
-            <Button className="btn-light w-75">{props.button2}</Button>
+            <Button className="btn-light w-100">{props.button2}</Button>
           </Col>
         </Row>
       </div>
